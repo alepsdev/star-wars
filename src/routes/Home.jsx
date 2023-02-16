@@ -3,7 +3,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import modal from '../components/modal';
-
+import swapi from '../axios/config';
 
 
 var Home = () => {
@@ -11,9 +11,7 @@ var Home = () => {
 
     const getDados = async() => {
         try{
-            const ret = await axios.get(
-                "https://swapi.dev/api/people/"
-            )
+            const ret = await swapi.get("/people/")
             
             setDados(ret.data)
 
@@ -29,13 +27,15 @@ var Home = () => {
     
   return (
     <div>
+        <p></p>
+        Perfornagens
         {dados.length === 0 ? (<p>Carregando...</p>) : (
-            <div>
+           <div>
                 <ul >
                     {dados?.results.map(dado => {
                         return(
                             <li key={dado.url}>
-                                <Link onClick={modal()}>{dado.name}</Link>
+                                <Link>{dado.name}</Link>
                             </li>
                             
                         )

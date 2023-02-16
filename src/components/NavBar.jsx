@@ -1,18 +1,16 @@
-import {Link} from 'react-router-dom'
+import swapi from '../axios/config';
+
 
 const NavBar = () => {
-    
-   
-
+    const getDados = 
+    swapi.get()
   return (
     <nav className="navbar">
-        <h3>Busque um personagens</h3>
-        <input required type="text" name="busca" id="busca" placeholder='Nome...' 
-            onKeyDown={(e) => {
-                e.code == "Enter" ? console.log(e.target.value) : console.log("n deu")
-            }   
-        }/>
-
+        <a href='' onClick={() => {}}>Personagens</a>
+        <a>Filmes</a>
+        <a>Planetas</a>
+        <a>Veiculos</a>
+        <a>Especies</a>
     </nav>
     )
 }

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import axios from "axios";
 import NavBar from "./components/NavBar";
+import SearchBar from "./components/searchBar";
+
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      
+      <SearchBar/>
       <div className="container">
         <Outlet/>
       </div>
